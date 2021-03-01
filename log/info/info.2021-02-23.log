@@ -1,0 +1,444 @@
+2021-02-23 21:45:22  INFO  background-preinit org.hibernate.validator.internal.util.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-02-23 21:45:22  INFO  main com.naown.NaOwnApplication Starting NaOwnApplication using Java 1.8.0_271 on DESKTOP-AAL041A with PID 12672 (D:\java\naown\target\classes started by chenjian in D:\java\naown)
+2021-02-23 21:45:22  INFO  main com.naown.NaOwnApplication No active profile set, falling back to default profiles: default
+2021-02-23 21:45:23  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-23 21:45:23  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-23 21:45:23  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$84116363] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$86a4a208] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'shiroConfig' of type [com.naown.shiro.config.ShiroConfig$$EnhancerBySpringCGLIB$$2f129824] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$aec0f24d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$8aa47b25] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:23  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:24  INFO  main com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+2021-02-23 21:45:24  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:24  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userRealm' of type [com.naown.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:31  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 21:45:32  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+2021-02-23 21:45:32  INFO  main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+2021-02-23 21:45:32  INFO  main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2021-02-23 21:45:32  INFO  main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 21:45:32  INFO  main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2021-02-23 21:45:32  INFO  main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 10257 ms
+2021-02-23 21:45:32  INFO  main org.quartz.impl.StdSchedulerFactory Using default implementation for ThreadExecutor
+2021-02-23 21:45:32  INFO  main org.quartz.core.SchedulerSignalerImpl Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-02-23 21:45:32  INFO  main org.quartz.core.QuartzScheduler Quartz Scheduler v.2.3.2 created.
+2021-02-23 21:45:32  INFO  main org.quartz.simpl.RAMJobStore RAMJobStore initialized.
+2021-02-23 21:45:32  INFO  main org.quartz.core.QuartzScheduler Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-02-23 21:45:32  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-02-23 21:45:32  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler version: 2.3.2
+2021-02-23 21:45:32  INFO  main org.quartz.core.QuartzScheduler JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@45b96e4c
+2021-02-23 21:45:33  INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 21:45:34  INFO  main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+2021-02-23 21:45:34  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-23 21:45:34  INFO  main org.springframework.scheduling.quartz.SchedulerFactoryBean Starting Quartz Scheduler now
+2021-02-23 21:45:34  INFO  main org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-02-23 21:45:34  INFO  main com.naown.NaOwnApplication Started NaOwnApplication in 13.007 seconds (JVM running for 14.526)
+2021-02-23 21:45:50  INFO  http-nio-8081-exec-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 21:45:50  INFO  http-nio-8081-exec-1 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2021-02-23 21:45:50  INFO  http-nio-8081-exec-1 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+2021-02-23 21:46:05  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:05  INFO  pool-2-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:05  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 21:46:10  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:10  INFO  pool-3-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:10  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 21:46:15  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:15  INFO  pool-4-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:15  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 21:46:20  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:20  INFO  pool-5-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:20  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：0 毫秒
+2021-02-23 21:46:25  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:25  INFO  pool-6-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:25  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 21:46:30  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:30  INFO  pool-7-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:30  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 21:46:35  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:35  INFO  pool-8-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:35  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 21:46:40  INFO  quartzScheduler_Worker-8 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 21:46:40  INFO  pool-9-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 21:46:40  INFO  quartzScheduler_Worker-8 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：0 毫秒
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook org.springframework.scheduling.quartz.SchedulerFactoryBean Shutting down Quartz Scheduler
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closing ...
+2021-02-23 22:10:32  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+2021-02-23 22:10:43  INFO  background-preinit org.hibernate.validator.internal.util.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-02-23 22:10:43  INFO  main com.naown.NaOwnApplication Starting NaOwnApplication using Java 1.8.0_271 on DESKTOP-AAL041A with PID 848 (D:\java\naown\target\classes started by chenjian in D:\java\naown)
+2021-02-23 22:10:43  INFO  main com.naown.NaOwnApplication No active profile set, falling back to default profiles: default
+2021-02-23 22:10:44  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-23 22:10:44  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-23 22:10:44  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$751d53c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$77b0926a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'shiroConfig' of type [com.naown.shiro.config.ShiroConfig$$EnhancerBySpringCGLIB$$201e8886] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$9fcce2af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$7bb06b87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:44  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:45  INFO  main com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+2021-02-23 22:10:45  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:45  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userRealm' of type [com.naown.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:10:46  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+2021-02-23 22:10:46  INFO  main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:10:46  INFO  main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2021-02-23 22:10:46  INFO  main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 22:10:46  INFO  main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2021-02-23 22:10:46  INFO  main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3604 ms
+2021-02-23 22:10:47  INFO  main org.quartz.impl.StdSchedulerFactory Using default implementation for ThreadExecutor
+2021-02-23 22:10:47  INFO  main org.quartz.core.SchedulerSignalerImpl Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-02-23 22:10:47  INFO  main org.quartz.core.QuartzScheduler Quartz Scheduler v.2.3.2 created.
+2021-02-23 22:10:47  INFO  main org.quartz.simpl.RAMJobStore RAMJobStore initialized.
+2021-02-23 22:10:47  INFO  main org.quartz.core.QuartzScheduler Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-02-23 22:10:47  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-02-23 22:10:47  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler version: 2.3.2
+2021-02-23 22:10:47  INFO  main org.quartz.core.QuartzScheduler JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@62cd562d
+2021-02-23 22:10:47  INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:10:48  INFO  main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:10:48  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-23 22:10:48  INFO  main org.springframework.scheduling.quartz.SchedulerFactoryBean Starting Quartz Scheduler now
+2021-02-23 22:10:48  INFO  main org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-02-23 22:10:48  INFO  main com.naown.NaOwnApplication Started NaOwnApplication in 6.017 seconds (JVM running for 7.244)
+2021-02-23 22:16:01  INFO  http-nio-8081-exec-2 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 22:16:01  INFO  http-nio-8081-exec-2 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2021-02-23 22:16:01  INFO  http-nio-8081-exec-2 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+2021-02-23 22:16:05  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:05  INFO  pool-2-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:05  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:16:10  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:10  INFO  pool-3-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:10  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：0 毫秒
+2021-02-23 22:16:15  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:15  INFO  pool-4-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:15  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:16:20  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:20  INFO  pool-5-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:20  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:16:25  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:25  INFO  pool-6-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:25  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:16:30  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:30  INFO  pool-7-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:30  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:16:35  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:35  INFO  pool-8-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:35  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：0 毫秒
+2021-02-23 22:16:40  INFO  quartzScheduler_Worker-8 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:40  INFO  pool-9-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:40  INFO  quartzScheduler_Worker-8 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:16:45  INFO  quartzScheduler_Worker-9 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:45  INFO  pool-10-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:45  INFO  quartzScheduler_Worker-9 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:16:50  INFO  quartzScheduler_Worker-10 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:16:50  INFO  pool-11-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:16:50  INFO  quartzScheduler_Worker-10 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook org.springframework.scheduling.quartz.SchedulerFactoryBean Shutting down Quartz Scheduler
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closing ...
+2021-02-23 22:17:51  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+2021-02-23 22:17:58  INFO  background-preinit org.hibernate.validator.internal.util.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-02-23 22:17:58  INFO  main com.naown.NaOwnApplication Starting NaOwnApplication using Java 1.8.0_271 on DESKTOP-AAL041A with PID 13240 (D:\java\naown\target\classes started by chenjian in D:\java\naown)
+2021-02-23 22:17:58  INFO  main com.naown.NaOwnApplication No active profile set, falling back to default profiles: default
+2021-02-23 22:17:59  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-23 22:17:59  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-23 22:17:59  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$3d7b2e05] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$400e6caa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'shiroConfig' of type [com.naown.shiro.config.ShiroConfig$$EnhancerBySpringCGLIB$$e87c62c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$682abcef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$440e45c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:17:59  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:00  INFO  main com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+2021-02-23 22:18:00  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:00  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userRealm' of type [com.naown.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:18:01  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+2021-02-23 22:18:01  INFO  main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:18:01  INFO  main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2021-02-23 22:18:01  INFO  main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 22:18:02  INFO  main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2021-02-23 22:18:02  INFO  main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3870 ms
+2021-02-23 22:18:02  INFO  main org.quartz.impl.StdSchedulerFactory Using default implementation for ThreadExecutor
+2021-02-23 22:18:02  INFO  main org.quartz.core.SchedulerSignalerImpl Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-02-23 22:18:02  INFO  main org.quartz.core.QuartzScheduler Quartz Scheduler v.2.3.2 created.
+2021-02-23 22:18:02  INFO  main org.quartz.simpl.RAMJobStore RAMJobStore initialized.
+2021-02-23 22:18:02  INFO  main org.quartz.core.QuartzScheduler Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-02-23 22:18:02  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-02-23 22:18:02  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler version: 2.3.2
+2021-02-23 22:18:02  INFO  main org.quartz.core.QuartzScheduler JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@62cd562d
+2021-02-23 22:18:02  INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:18:03  INFO  main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:18:03  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-23 22:18:03  INFO  main org.springframework.scheduling.quartz.SchedulerFactoryBean Starting Quartz Scheduler now
+2021-02-23 22:18:03  INFO  main org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-02-23 22:18:03  INFO  main com.naown.NaOwnApplication Started NaOwnApplication in 6.799 seconds (JVM running for 8.173)
+2021-02-23 22:18:10  INFO  http-nio-8081-exec-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 22:18:10  INFO  http-nio-8081-exec-1 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2021-02-23 22:18:10  INFO  http-nio-8081-exec-1 org.springframework.web.servlet.DispatcherServlet Completed initialization in 3 ms
+2021-02-23 22:18:15  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:18:15  INFO  pool-2-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:18:15  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:18:20  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:18:20  INFO  pool-3-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:18:20  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:18:25  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:18:25  INFO  pool-4-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:18:25  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:18:30  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:18:30  INFO  pool-5-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:18:30  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:36:10  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook org.springframework.scheduling.quartz.SchedulerFactoryBean Shutting down Quartz Scheduler
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closing ...
+2021-02-23 22:36:11  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+2021-02-23 22:36:17  INFO  main com.naown.NaOwnApplication Starting NaOwnApplication using Java 1.8.0_271 on DESKTOP-AAL041A with PID 14660 (D:\java\naown\target\classes started by chenjian in D:\java\naown)
+2021-02-23 22:36:17  INFO  main com.naown.NaOwnApplication No active profile set, falling back to default profiles: default
+2021-02-23 22:36:17  INFO  background-preinit org.hibernate.validator.internal.util.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-02-23 22:36:18  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-23 22:36:18  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-23 22:36:18  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2021-02-23 22:36:18  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a8002938] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:18  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa9367dd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:18  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'shiroConfig' of type [com.naown.shiro.config.ShiroConfig$$EnhancerBySpringCGLIB$$53015df9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:18  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:18  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d2afb822] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:18  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$ae9340fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:18  INFO  main com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource
+2021-02-23 22:36:19  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:19  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:19  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:19  INFO  main com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+2021-02-23 22:36:19  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:19  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userRealm' of type [com.naown.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:20  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:36:21  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+2021-02-23 22:36:21  INFO  main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:36:21  INFO  main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2021-02-23 22:36:21  INFO  main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 22:36:21  INFO  main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2021-02-23 22:36:21  INFO  main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3743 ms
+2021-02-23 22:36:21  INFO  main org.quartz.impl.StdSchedulerFactory Using default implementation for ThreadExecutor
+2021-02-23 22:36:21  INFO  main org.quartz.core.SchedulerSignalerImpl Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-02-23 22:36:21  INFO  main org.quartz.core.QuartzScheduler Quartz Scheduler v.2.3.2 created.
+2021-02-23 22:36:21  INFO  main org.quartz.simpl.RAMJobStore RAMJobStore initialized.
+2021-02-23 22:36:21  INFO  main org.quartz.core.QuartzScheduler Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-02-23 22:36:21  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-02-23 22:36:21  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler version: 2.3.2
+2021-02-23 22:36:21  INFO  main org.quartz.core.QuartzScheduler JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@485451d8
+2021-02-23 22:36:21  INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:36:22  INFO  main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:36:22  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-23 22:36:22  INFO  main org.springframework.scheduling.quartz.SchedulerFactoryBean Starting Quartz Scheduler now
+2021-02-23 22:36:22  INFO  main org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-02-23 22:36:22  INFO  main com.naown.NaOwnApplication Started NaOwnApplication in 6.188 seconds (JVM running for 7.396)
+2021-02-23 22:36:37  INFO  http-nio-8081-exec-2 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 22:36:37  INFO  http-nio-8081-exec-2 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2021-02-23 22:36:37  INFO  http-nio-8081-exec-2 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+2021-02-23 22:36:45  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:36:45  INFO  el-pool1-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:36:45  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:36:50  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:36:50  INFO  el-pool2-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:36:50  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:36:55  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:36:55  INFO  el-pool3-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:36:55  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:37:00  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:37:00  INFO  el-pool4-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:37:00  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:37:05  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:37:05  INFO  el-pool5-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:37:05  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:37:10  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:37:10  INFO  el-pool6-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:37:10  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：0 毫秒
+2021-02-23 22:37:15  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:37:15  INFO  el-pool7-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:37:15  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:45:04  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook org.springframework.scheduling.quartz.SchedulerFactoryBean Shutting down Quartz Scheduler
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closing ...
+2021-02-23 22:45:05  INFO  SpringContextShutdownHook com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+2021-02-23 22:45:12  INFO  main com.naown.NaOwnApplication Starting NaOwnApplication using Java 1.8.0_271 on DESKTOP-AAL041A with PID 17036 (D:\java\naown\target\classes started by chenjian in D:\java\naown)
+2021-02-23 22:45:12  INFO  main com.naown.NaOwnApplication No active profile set, falling back to default profiles: default
+2021-02-23 22:45:12  INFO  background-preinit org.hibernate.validator.internal.util.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-02-23 22:45:13  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-23 22:45:13  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-23 22:45:13  INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$2d5b8bc4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$2feeca69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'shiroConfig' of type [com.naown.shiro.config.ShiroConfig$$EnhancerBySpringCGLIB$$d85cc085] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$580b1aae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$33eea386] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:13  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:14  INFO  main com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+2021-02-23 22:45:14  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:14  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userServiceImpl' of type [com.naown.shiro.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'userRealm' of type [com.naown.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-23 22:45:15  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+2021-02-23 22:45:15  INFO  main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:45:15  INFO  main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2021-02-23 22:45:15  INFO  main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 22:45:15  INFO  main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2021-02-23 22:45:15  INFO  main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3527 ms
+2021-02-23 22:45:16  INFO  main org.quartz.impl.StdSchedulerFactory Using default implementation for ThreadExecutor
+2021-02-23 22:45:16  INFO  main org.quartz.core.SchedulerSignalerImpl Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-02-23 22:45:16  INFO  main org.quartz.core.QuartzScheduler Quartz Scheduler v.2.3.2 created.
+2021-02-23 22:45:16  INFO  main org.quartz.simpl.RAMJobStore RAMJobStore initialized.
+2021-02-23 22:45:16  INFO  main org.quartz.core.QuartzScheduler Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-02-23 22:45:16  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-02-23 22:45:16  INFO  main org.quartz.impl.StdSchedulerFactory Quartz scheduler version: 2.3.2
+2021-02-23 22:45:16  INFO  main org.quartz.core.QuartzScheduler JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@15e8c040
+2021-02-23 22:45:16  INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 22:45:17  INFO  main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+2021-02-23 22:45:17  INFO  main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-23 22:45:17  INFO  main org.springframework.scheduling.quartz.SchedulerFactoryBean Starting Quartz Scheduler now
+2021-02-23 22:45:17  INFO  main org.quartz.core.QuartzScheduler Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-02-23 22:45:17  INFO  main com.naown.NaOwnApplication Started NaOwnApplication in 5.933 seconds (JVM running for 7.158)
+2021-02-23 22:45:20  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:20  INFO  el-pool1-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:20  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:45:25  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:25  INFO  el-pool2-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:25  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：0 毫秒
+2021-02-23 22:45:30  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:30  INFO  el-pool3-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:30  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:45:35  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:35  INFO  el-pool4-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:35  INFO  quartzScheduler_Worker-4 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:45:40  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:40  INFO  el-pool5-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:40  INFO  quartzScheduler_Worker-5 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:45:45  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:45  INFO  el-pool6-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:45  INFO  quartzScheduler_Worker-6 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:45:50  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:50  INFO  el-pool7-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:50  INFO  quartzScheduler_Worker-7 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:45:55  INFO  quartzScheduler_Worker-8 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:45:55  INFO  el-pool8-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:45:55  INFO  quartzScheduler_Worker-8 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:46:00  INFO  quartzScheduler_Worker-9 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:46:00  INFO  el-pool9-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:46:00  INFO  quartzScheduler_Worker-9 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:46:05  INFO  quartzScheduler_Worker-10 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:46:05  INFO  el-pool10-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:46:05  INFO  quartzScheduler_Worker-10 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:46:10  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:46:10  INFO  el-pool11-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:46:10  INFO  quartzScheduler_Worker-1 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：2 毫秒
+2021-02-23 22:46:15  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:46:15  INFO  el-pool12-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:46:15  INFO  quartzScheduler_Worker-2 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:46:20  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务准备执行，任务ID：1
+2021-02-23 22:46:20  INFO  el-pool13-thread-1 com.naown.quartz.task.TestTask TestTask定时任务正在执行，参数为：123
+2021-02-23 22:46:20  INFO  quartzScheduler_Worker-3 com.naown.quartz.ScheduleJob 任务执行成功，任务ID：1，总共耗时：1 毫秒
+2021-02-23 22:46:22  INFO  http-nio-8081-exec-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 22:46:22  INFO  http-nio-8081-exec-1 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2021-02-23 22:46:22  INFO  http-nio-8081-exec-1 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms

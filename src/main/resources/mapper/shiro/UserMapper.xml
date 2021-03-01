@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.naown.shiro.mapper.UserMapper">
+
+    <resultMap id="UserAndRole" type="User">
+        <id column="user_id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="nick_name" property="nickName"></result>
+        <result column="gender" property="gender"></result>
+        <result column="phone" property="phone"></result>
+        <result column="email" property="email"></result>
+        <result column="avatar" property="avatar"></result>
+        <result column="password" property="password"></result>
+        <result column="admin_status" property="adminStatus"></result>
+        <result column="enabled" property="enabled"></result>
+        <result column="salt" property="salt"></result>
+        <result column="create_by" property="createBy"></result>
+        <result column="update_by" property="updateBy"></result>
+        <result column="pwd_reset_time" property="pwdResetTime"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="update_time" property="updateTime"></result>
+        <!-- 角色信息 -->
+        <collection property="roles" ofType="Role" javaType="list">
+            <id column="role_id" property="id"></id>
+            <result column="level" property="level"></result>
+            <result column="name" property="name"></result>
+            <result column="data_scope" property="dataScope"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findByUserNameRole" parameterType="String" resultMap="UserAndRole">
+        select u.* , r.role_id,r.`level`,r.`name`,r.data_scope from sys_user u
+            left join sys_users_roles sur
+                on u.user_id = sur.user_id
+                    left join sys_role r
+                        on sur.role_id = r.role_id
+                            where u.username = #{username}
+    </select>
+
+</mapper>

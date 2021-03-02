@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication()
-@MapperScan({"com.naown.aop.mapper","com.naown.quartz.mapper","com.naown.shiro.mapper"})
+@MapperScan({"com.naown.aop.mapper","com.naown.quartz.mapper","com.naown.shiro.mapper","com.naown.common.mapper"})
 public class NaOwnApplication {
 
     public static void main(String[] args) {

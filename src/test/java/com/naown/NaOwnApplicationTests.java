@@ -1,6 +1,8 @@
 package com.naown;
 
 import com.naown.aop.mapper.LogMapper;
+import com.naown.common.entity.Menus;
+import com.naown.common.mapper.MenusMapper;
 import com.naown.shiro.entity.User;
 import com.naown.shiro.mapper.UserMapper;
 import com.naown.utils.SpringContextUtils;
@@ -10,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.File;
+import java.util.List;
 
 @SpringBootTest
 class NaOwnApplicationTests {
@@ -22,13 +25,15 @@ class NaOwnApplicationTests {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    MenusMapper menusMapper;
     @Test
     void contextLoads() {
         //User admin = userMapper.findByUserNameRole("admin");
         //System.out.println(admin);
 
-        RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
-        System.out.println(redisTemplate);
+        /*RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
+        System.out.println(redisTemplate);*/
         //int info = logMapper.insert(new LogEntity("INFO", System.currentTimeMillis() - (System.currentTimeMillis() + 60)));
         //System.out.println(info);
     }

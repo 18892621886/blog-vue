@@ -19,6 +19,7 @@
         <result column="pwd_reset_time" property="pwdResetTime"></result>
         <result column="create_time" property="createTime"></result>
         <result column="update_time" property="updateTime"></result>
+        <result column="last_login_date" property="lastLoginDate"></result>
         <!-- 角色信息 -->
         <collection property="roles" ofType="Role" javaType="list">
             <id column="role_id" property="id"></id>

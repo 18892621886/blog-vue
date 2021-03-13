@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
- * @USER: chenjian
+ * @author : chenjian
  * @DATE: 2021/2/21 15:13 周日
  **/
 @Data

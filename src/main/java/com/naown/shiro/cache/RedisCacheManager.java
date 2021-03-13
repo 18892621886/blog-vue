@@ -5,6 +5,7 @@ import org.apache.shiro.cache.CacheException;
 import org.apache.shiro.cache.CacheManager;
 
 /**
+ * 暂未使用到
  * @USER: chenjian
  * @DATE: 2021/2/21 23:14 周日
  **/

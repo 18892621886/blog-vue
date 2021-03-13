@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.naown.aop.mapper.LogMapper">
+
+    <resultMap id="BaseResultMap" type="com.naown.aop.entity.LogEntity">
+        <id column="log_id" property="id" />
+        <result column="description" property="description" />
+        <result column="log_type" property="logType" />
+        <result column="method" property="method" />
+        <result column="params" property="params" />
+        <result column="request_ip" property="requestIp" />
+        <result column="time" property="time" />
+        <result column="username" property="username" />
+        <result column="address" property="address" />
+        <result column="browser" property="browser" />
+        <result column="exception_detail" property="exceptionDetail" />
+        <result column="create_time" property="createTime" />
+        <result column="os" property="os" />
+        <result column="request_method" property="requestMethod" />
+    </resultMap>
+
+    <select id="listLogEntity" resultMap="BaseResultMap" parameterType="String">
+        SELECT
+            log_id,
+            description,
+            log_type,
+            method,
+            params,
+            request_ip,
+            time,
+            username,
+            address,
+            browser,
+            exception_detail,
+            create_time,
+            os,
+            request_method
+        FROM
+            sys_log ${ew.customSqlSegment}
+        /* 因为mybatis的条件构造器原因所以取消了where否则的话还是需要加上where的 */
+        <if test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+            AND date_format(create_time,'%Y-%m-%d %H:%m') between #{startDate} and #{endDate}
+        </if>
+    </select>
+
+    <select id="listOperationLogs" resultMap="BaseResultMap" parameterType="String">
+        SELECT
+            log_id,
+            description,
+            log_type,
+            method,
+            params,
+            request_ip,
+            time,
+            username,
+            address,
+            browser,
+            exception_detail,
+            create_time,
+            os,
+            request_method
+        FROM
+            sys_log
+        <where>
+            <if test="params != null and params.length > 0" > <!-- 先判断传来的数组是否为空 -->
+                and
+                <foreach collection="params" item="param" index="index" separator="and">
+                    description not like #{param}
+                </foreach>
+            </if>
+            <if test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+                AND date_format(create_time,'%Y-%m-%d %H:%m') between #{startDate} and #{endDate}
+            </if>
+        </where>
+    </select>
+
+</mapper>

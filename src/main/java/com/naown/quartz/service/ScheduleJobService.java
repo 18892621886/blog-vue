@@ -1,20 +1,28 @@
 package com.naown.quartz.service;
 
-import com.naown.quartz.ScheduleJob;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.naown.quartz.entity.QuartzJob;
 
 import java.util.List;
 
 /**
- * @USER: chenjian
- * @DATE: 2021/2/14 0:52 周日
+ * @author : chenjian
+ * @since : 2021/2/14 0:52 周日
  **/
 public interface ScheduleJobService {
     /**
      * 获取所有的Job任务
-     * @return
+     * @return 返回所有job实例
      */
     List<QuartzJob> getJobList();
+
+    /**
+     * 分页查询所有的job任务
+     * @param pageNum 第几页
+     * @param pageSize 一页几条数据
+     * @return
+     */
+    IPage<QuartzJob> getJobList(Integer pageNum, Integer pageSize);
 
     /**
      * 保存一个Job实例
@@ -42,10 +50,10 @@ public interface ScheduleJobService {
 
     /**
      * 更新Job的运行状态
-     * @param quartzJob
+     * @param jobId
      * @param status
      */
-    void updateJobStatusById(QuartzJob quartzJob, Boolean status);
+    void updateJobStatusById(Long jobId, Boolean status);
 
     /**
      * 根据时间获取Job实例
@@ -57,16 +65,20 @@ public interface ScheduleJobService {
 
     /**
      * 暂停运行
+     * @param jobId
      */
     void pause(Long jobId);
 
     /**
      * 恢复运行
+     * @param jobId
      */
     void resume(Long jobId);
 
     /**
      * 根据Id获取一个Job实例
+     * @param jobId
+     * @return
      */
     QuartzJob selectJobById(Long jobId);
 }

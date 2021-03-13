@@ -45,9 +45,6 @@ public class QuartzJob implements Serializable {
     /** 状态，暂停或启动 1:启动 0:暂停 */
     private Boolean status;
 
-    /** 负责人 */
-    private String personInCharge;
-
     /** 报警邮箱 */
     private String email;
 

@@ -1,52 +1,74 @@
 package com.naown.shiro.config;
 
-import com.naown.shiro.cache.RedisCacheManager;
+import com.naown.shiro.jwt.JwtFilter;
 import com.naown.shiro.realm.UserRealm;
-import org.apache.shiro.authc.pam.FirstSuccessfulStrategy;
-import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
-import org.apache.shiro.mgt.SessionStorageEvaluator;
+import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
+import org.apache.shiro.mgt.DefaultSubjectDAO;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
-import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
-import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
-import org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.server.session.DefaultWebSessionManager;
 
-import java.util.Arrays;
+import javax.servlet.Filter;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @USER: chenjian
+ * 参考 https://github.com/dolyw/VueStudy/tree/master/VueStudy08-JWT/jwt-demo
+ * @author : chenjian
  * @DATE: 2021/2/17 0:51 周三
  **/
 @Configuration
 public class ShiroConfig {
 
+    /**
+     * 添加自己的过滤器，自定义url规则
+     * Shiro自带拦截器配置规则
+     * rest：比如/admins/user/**=rest[user],根据请求的方法，相当于/admins/user/**=perms[user：method] ,其中method为post，get，delete等
+     * port：比如/admins/user/**=port[8081],当请求的url的端口不是8081是跳转到schemal：//serverName：8081?queryString,其中schmal是协议http或https等，serverName是你访问的host,8081是url配置里port的端口，queryString是你访问的url里的？后面的参数
+     * perms：比如/admins/user/**=perms[user：add：*],perms参数可以写多个，多个时必须加上引号，并且参数之间用逗号分割，比如/admins/user/**=perms["user：add：*,user：modify：*"]，当有多个参数时必须每个参数都通过才通过，想当于isPermitedAll()方法
+     * roles：比如/admins/user/**=roles[admin],参数可以写多个，多个时必须加上引号，并且参数之间用逗号分割，当有多个参数时，比如/admins/user/**=roles["admin,guest"],每个参数通过才算通过，相当于hasAllRoles()方法。//要实现or的效果看http://zgzty.blog.163.com/blog/static/83831226201302983358670/
+     * anon：比如/admins/**=anon 没有参数，表示可以匿名使用
+     * authc：比如/admins/user/**=authc表示需要认证才能使用，没有参数
+     * authcBasic：比如/admins/user/**=authcBasic没有参数表示httpBasic认证
+     * ssl：比如/admins/user/**=ssl没有参数，表示安全的url请求，协议为https
+     * user：比如/admins/user/**=user没有参数表示必须存在用户，当登入操作时不做检查
+     * 详情见文档 http://shiro.apache.org/web.html#urls-
+     * @param securityManager
+     * @return org.apache.shiro.spring.web.ShiroFilterFactoryBean
+     * @author dolyw.com
+     * @date 2018/8/31 10:57
+     */
     @Bean
-    public ShiroFilterFactoryBean shiroFilterFactoryBean(@Autowired DefaultWebSecurityManager defaultWebSecurityManager){
-        ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
+    public ShiroFilterFactoryBean shiroFilterFactoryBean(@Autowired DefaultWebSecurityManager securityManager) {
+        ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
+        // 添加自己的过滤器取名为jwt
+        Map<String, Filter> filterMap = new HashMap<>(16);
+        filterMap.put("jwt", new JwtFilter());
+        factoryBean.setFilters(filterMap);
         // 设置安全管理器
-        shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);
-        // 添加shiro内置过滤器
-        /**
-         * anon:无需认证
-         * authc：必须认证了才能访问
-         * user：必须拥有记住我功能才能使用
-         * perms：拥有对某个权限才能访问
-         * role：拥有某个角色的权限才能访问
-         */
-        Map<String, String> filterMap = new LinkedHashMap<>();
-        filterMap.put("/login","anon");
-        //filterMap.put("/hello","authc");
-        // 设置权限过滤器
-        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
-        return shiroFilterFactoryBean;
+        factoryBean.setSecurityManager(securityManager);
+        // 自定义url规则使用LinkedHashMap有序Map
+        LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>(16);
+        // Swagger接口文档
+        // filterChainDefinitionMap.put("/v2/api-docs", "anon");
+        // filterChainDefinitionMap.put("/webjars/**", "anon");
+        // filterChainDefinitionMap.put("/swagger-resources/**", "anon");
+        // filterChainDefinitionMap.put("/swagger-ui.html", "anon");
+        // filterChainDefinitionMap.put("/doc.html", "anon");
+        // 公开接口
+        // filterChainDefinitionMap.put("/api/**", "anon");
+        // 登录接口放开
+        filterChainDefinitionMap.put("/user/login", "anon");
+        // 所有请求通过我们自己的JWTFilter
+        filterChainDefinitionMap.put("/**", "jwt");
+        factoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+        return factoryBean;
     }
 
     /**
@@ -56,17 +78,58 @@ public class ShiroConfig {
     @Bean
     public static DefaultAdvisorAutoProxyCreator getDefaultAdvisorAutoProxyCreator(){
         DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator=new DefaultAdvisorAutoProxyCreator();
-        defaultAdvisorAutoProxyCreator.setUsePrefix(true);
+        // 强制使用cglib，防止重复代理和可能引起代理出错的问题  https://zhuanlan.zhihu.com/p/29161098
+        defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
         return defaultAdvisorAutoProxyCreator;
     }
 
-    // 安全管理器
+    /**
+     * 安全管理器
+     * 配置使用自定义Realm，关闭Shiro自带的session
+     * 详情见文档 http://shiro.apache.org/session-management.html#SessionManagement-StatelessApplications%28Sessionless%29
+     * @param userRealm
+     * @return org.apache.shiro.web.mgt.DefaultWebSecurityManager
+     * @author dolyw.com
+     * @date 2018/8/31 10:55
+     */
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Bean
-    public DefaultWebSecurityManager defaultWebSecurityManager(@Autowired UserRealm userRealm){
-        DefaultWebSecurityManager webSecurityManager = new DefaultWebSecurityManager();
-        webSecurityManager.setCacheManager(new RedisCacheManager());
-        webSecurityManager.setRealm(userRealm);
-        return webSecurityManager;
+    public DefaultWebSecurityManager defaultWebSecurityManager(@Autowired UserRealm userRealm) {
+        DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
+        // 使用自定义Realm
+        defaultWebSecurityManager.setRealm(userRealm);
+        // 关闭Shiro自带的session
+        DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
+        DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();
+        defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
+        subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
+        defaultWebSecurityManager.setSubjectDAO(subjectDAO);
+        // TODO 设置自定义Cache缓存 暂时去除 后续加入redis缓存
+        // defaultWebSecurityManager.setCacheManager(new CustomCacheManager());
+        return defaultWebSecurityManager;
+    }
+
+    /**
+     * 负责管理shiro的生命周期  后续有兴趣可以研究一下
+     * @return
+     */
+    @Bean
+    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
+        return new LifecycleBeanPostProcessor();
+    }
+
+    /**
+     *  开启shiro aop注解支持.
+     *  使用代理方式;所以需要开启代码支持
+     *  待确认
+     * @param securityManager
+     * @return
+     */
+    @Bean
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(DefaultWebSecurityManager securityManager) {
+        AuthorizationAttributeSourceAdvisor advisor = new AuthorizationAttributeSourceAdvisor();
+        advisor.setSecurityManager(securityManager);
+        return advisor;
     }
 
 }

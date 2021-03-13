@@ -1,8 +1,11 @@
 package com.naown.controller;
 
 import com.naown.aop.annotation.Log;
+import com.naown.common.entity.Menus;
+import com.naown.common.service.MenusService;
 import com.naown.quartz.service.ScheduleJobService;
 import com.naown.utils.SaltUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -10,19 +13,27 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @USER: chenjian
  * @DATE: 2021/2/21 1:39 周日
  **/
 @RestController
+@Slf4j
 public class IndexController {
+    @Autowired
+    private MenusService menusService;
 
     @Autowired
     ScheduleJobService scheduleJobService;
 
     @GetMapping("test")
-    @RequiresAuthentication
     public String test(){
+        List<Menus> menus = menusService.listMenusByRoleId(1L);
+        for (Menus menu : menus){
+            log.info("菜单目录:{}",menu);
+        }
         return "测试";
     }
 

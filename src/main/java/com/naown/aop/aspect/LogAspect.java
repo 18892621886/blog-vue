@@ -2,10 +2,7 @@ package com.naown.aop.aspect;
 
 import com.naown.aop.entity.LogEntity;
 import com.naown.aop.service.impl.LogServiceImpl;
-import com.naown.utils.RequestHolder;
-import com.naown.utils.ShiroUtils;
-import com.naown.utils.StringUtils;
-import com.naown.utils.ThrowableUtil;
+import com.naown.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.aspectj.lang.JoinPoint;
@@ -17,8 +14,8 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @USER: chenjian
- * @DATE: 2021/2/11 17:17 周四
+ * @author : chenjian
+ * @since : 2021/2/11 17:17 周四
  **/
 @Aspect
 @Component
@@ -43,15 +40,18 @@ public class LogAspect {
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         // 设置执行开始的时间
         currentTime.set(System.currentTimeMillis());
+        // 先执行方法，因为不执行的话用户名拿不到
+        Object proceed = joinPoint.proceed();
         // 创建log并且制定级别和执行时间
         LogEntity log = new LogEntity("INFO",System.currentTimeMillis() - currentTime.get());
         // 移除刚开始存储的时间
         currentTime.remove();
         // 获得HttpServletRequest
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
+        System.out.println("method"+request.getMethod());
         // 使用mybatis-plus进行存储
-        logService.saveLog(getUsername(), StringUtils.getBrowser(request),StringUtils.getIp(request),joinPoint,log);
-        return joinPoint.proceed();
+        logService.saveLog(getUsername(),StringUtils.getSystem(request), StringUtils.getBrowser(request),request.getMethod(),StringUtils.getIp(request),joinPoint,log);
+        return proceed;
     }
 
     /**
@@ -73,12 +73,19 @@ public class LogAspect {
         // 获得HttpServletRequest
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
         // 使用mybatis-plus进行存储
-        logService.saveLog(getUsername(), StringUtils.getBrowser(request), StringUtils.getIp(request), (ProceedingJoinPoint)joinPoint, log);
+        logService.saveLog(getUsername(),StringUtils.getSystem(request), StringUtils.getBrowser(request),request.getMethod(), StringUtils.getIp(request), (ProceedingJoinPoint)joinPoint, log);
     }
 
+    /**
+     * 从token中解析用户名
+     * claim 是在生成jwt时的Key
+     * @return
+     */
     public String getUsername() {
         try {
-            return ShiroUtils.getCurrentUsername();
+            String token = (String)SecurityUtils.getSubject().getPrincipal();
+            log.info("token:{}",JwtUtils.getClaim(token,"username"));
+            return JwtUtils.getClaim(token,"username");
         }catch (Exception e){
             return "";
         }

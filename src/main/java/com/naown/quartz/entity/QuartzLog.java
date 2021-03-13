@@ -8,8 +8,9 @@ import lombok.Data;
 import java.sql.Timestamp;
 
 /**
+ * 对应sys_quartz_log表
  * @author chenjian
- * @DATE: 2021/2/23 21:48 周二
+ * @since : 2021/2/23 21:48 周二
  **/
 @Data
 @TableName("sys_quartz_log")

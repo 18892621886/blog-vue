@@ -7,9 +7,9 @@ import org.springframework.util.StringUtils;
 import java.lang.reflect.Method;
 
 /**
- * @Description: 执行定时任务
- * @Author: Naccl
- * @Date: 2020-11-01
+ * @description: 执行定时任务
+ * @author : Naccl
+ * @since : 2020-11-01
  */
 public class ScheduleRunnable implements Runnable {
 	private Object target;

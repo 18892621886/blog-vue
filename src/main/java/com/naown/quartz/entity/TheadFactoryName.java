@@ -3,6 +3,9 @@ package com.naown.quartz.entity;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @author chenjian
+ */
 public class TheadFactoryName implements ThreadFactory {
 
     private static final AtomicInteger POOL_NUMBER = new AtomicInteger(1);

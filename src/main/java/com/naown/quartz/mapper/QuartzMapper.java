@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * JobMapper接口 用于数据交互
- * @USER: chenjian
- * @DATE: 2021/2/14 0:57 周日
+ * @author : chenjian
+ * @since : 2021/2/14 0:57 周日
  **/
 public interface QuartzMapper extends BaseMapper<QuartzJob> {
 }

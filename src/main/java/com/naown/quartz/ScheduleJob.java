@@ -17,8 +17,8 @@ import java.util.concurrent.Future;
 
 /**
  * 执行中需要记录日志或者添加功能可以在此修改
- * @USER: chenjian
- * @DATE: 2021/2/14 0:48 周日
+ * @author : chenjian
+ * @since : 2021/2/14 0:48 周日
  **/
 @Slf4j
 public class ScheduleJob extends QuartzJobBean {

@@ -7,8 +7,8 @@ import org.quartz.*;
 /**
  * 定时任务工具类
  * 参考：https://github.com/Naccl/NBlog
- * @USER: chenjian
- * @DATE: 2021/2/14 0:55 周日
+ * @author : chenjian
+ * @since : 2021/2/14 0:55 周日
  **/
 public class ScheduleUtils {
     private final static String JOB_NAME = "TASK_";

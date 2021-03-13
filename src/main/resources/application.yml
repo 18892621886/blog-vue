@@ -61,9 +61,9 @@ mybatis-plus:
   typeAliasesPackage: com.naown.*.entity
 logging:
   level:
-    com.naown.shiro.mapper: debug
+    com.naown.aop.mapper: debug
 server:
-  port: 8081
+  port: 8082
 #自定义线程
 task:
   pool:

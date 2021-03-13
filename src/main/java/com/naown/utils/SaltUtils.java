@@ -5,7 +5,6 @@ import org.apache.shiro.codec.CodecSupport;
 import org.apache.shiro.codec.Hex;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.util.ByteSource;
-import org.apache.shiro.util.SimpleByteSource;
 
 import java.io.File;
 import java.io.InputStream;
@@ -14,15 +13,15 @@ import java.util.Arrays;
 
 /**
  * 获得随机盐
- * @USER: chenjian
- * @DATE: 2021/2/19 23:54 周五
+ * @author : chenjian
+ * @since : 2021/2/19 23:54 周五
  **/
 public class SaltUtils implements ByteSource, Serializable {
 
     /**
      * 返回随机盐
      * @param n 返回几位的随机盐 如果为空则返回8位随机盐
-     * @return
+     * @return 返回随机盐
      */
     public static String getSalt(Integer n){
         if (n==null || n==1){
@@ -76,14 +75,17 @@ public class SaltUtils implements ByteSource, Serializable {
         return o instanceof byte[] || o instanceof char[] || o instanceof String || o instanceof ByteSource || o instanceof File || o instanceof InputStream;
     }
 
+    @Override
     public byte[] getBytes() {
         return this.bytes;
     }
 
+    @Override
     public boolean isEmpty() {
         return this.bytes == null || this.bytes.length == 0;
     }
 
+    @Override
     public String toHex() {
         if (this.cachedHex == null) {
             this.cachedHex = Hex.encodeToString(this.getBytes());
@@ -92,6 +94,7 @@ public class SaltUtils implements ByteSource, Serializable {
         return this.cachedHex;
     }
 
+    @Override
     public String toBase64() {
         if (this.cachedBase64 == null) {
             this.cachedBase64 = Base64.encodeToString(this.getBytes());
@@ -100,14 +103,17 @@ public class SaltUtils implements ByteSource, Serializable {
         return this.cachedBase64;
     }
 
+    @Override
     public String toString() {
         return this.toBase64();
     }
 
+    @Override
     public int hashCode() {
         return this.bytes != null && this.bytes.length != 0 ? Arrays.hashCode(this.bytes) : 0;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;

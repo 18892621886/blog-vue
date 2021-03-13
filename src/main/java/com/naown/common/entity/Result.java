@@ -1,13 +1,12 @@
 package com.naown.common.entity;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
 
 /**
- * @USER: chenjian
- * @DATE: 2021/2/21 17:05 周日
+ * @author : chenjian
+ * @since : 2021/2/21 17:05 周日
  **/
 public class Result extends HashMap<String,Object> {
     public Result(){
@@ -23,6 +22,28 @@ public class Result extends HashMap<String,Object> {
     public static Result succeed(Object data) {
         Result result = new Result();
         result.put("data",data);
+        return result;
+    }
+    /**
+     * 成功
+     * @param msg
+     * @return
+     */
+    public static Result succeed(String msg) {
+        Result result = new Result();
+        result.put("meg",msg);
+        return result;
+    }
+
+    /**
+     * 成功
+     * @param data
+     * @return
+     */
+    public static Result succeed(Object data,String msg) {
+        Result result = new Result();
+        result.put("data",data);
+        result.put("msg",msg);
         return result;
     }
 

@@ -6,8 +6,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * @USER: chenjian
- * @DATE: 2021/2/12 1:53 周五
+ * @author : chenjian
+ * @since : 2021/2/12 1:53 周五
  **/
 public class FileUtils {
 

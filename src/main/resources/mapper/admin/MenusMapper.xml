@@ -3,17 +3,60 @@
 <mapper namespace="com.naown.common.mapper.MenusMapper">
 
     <resultMap id="Menu" type="com.naown.common.entity.Menus">
-        <id column="id" property="id"></id>
+        <id column="menu_id" property="id"></id>
         <result column="label" property="label"></result>
         <result column="path" property="path"></result>
         <result column="icon" property="icon"></result>
         <result column="name" property="name"></result>
         <result column="url" property="url"></result>
-        <result column="childrenId" property="childrenId"></result>
+        <result column="children_id" property="childrenId"></result>
     </resultMap>
 
     <select id="listMenus" resultMap="Menu">
         select * from sys_menus
+    </select>
+
+    <select id="listMenusByRoleId" resultMap="Menu" parameterType="Long">
+        SELECT
+            m.menu_id,
+            m.icon,
+            m.path,
+            m.name,
+            m.url,
+            m.children_id,
+            m.label
+        FROM
+            sys_role AS r
+                LEFT JOIN sys_roles_menus AS rm ON r.role_id = rm.role_id
+                LEFT JOIN sys_menus AS m ON rm.menus_id = m.menu_id
+        WHERE
+            r.role_id = #{roleId} or children_id = menu_id
+    </select>
+
+    <select id="listChildrenByRoleId" resultMap="Menu" parameterType="Long">
+        SELECT
+            m.menu_id,
+            m.icon,
+            m.path,
+            m.name,
+            m.url,
+            m.children_id,
+            m.label
+        FROM
+            sys_menus AS s
+                LEFT JOIN sys_roles_menus AS rm ON s.menu_id = rm.menus_id
+        WHERE
+            role_id = #{roleId}
+          AND children_id IN (
+            SELECT
+                children_id
+            FROM
+                sys_menus
+            WHERE
+                children_id IS NOT NULL
+            GROUP BY
+                children_id
+        )
     </select>
 
 </mapper>

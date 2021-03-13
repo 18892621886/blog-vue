@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
+import java.util.List;
+
 /**
  * 动态路由菜单类
  * @author: chenjian
@@ -17,6 +19,7 @@ import lombok.*;
 @TableName("sys-menu")
 public class Menus {
     /** ID */
+    @TableField("menu_id")
     private Long id;
     /** 菜单栏标签 */
     private String label;
@@ -32,5 +35,5 @@ public class Menus {
     private Long childrenId;
     /** 是否包含二级菜单 */
     @TableField(exist = false)
-    private Menus[] children;
+    private List<Menus> children;
 }

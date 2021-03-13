@@ -1,11 +1,8 @@
 package com.naown.quartz.service.impl;
 
-/**
- * @USER: chenjian
- * @DATE: 2021/2/14 0:54 周日
- **/
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.naown.quartz.entity.QuartzJob;
 import com.naown.quartz.mapper.QuartzMapper;
 import com.naown.quartz.service.ScheduleJobService;
@@ -21,9 +18,9 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
- * @Description: 定时任务业务层实现
- * @Author: Naccl
- * @Date: 2020-11-01
+ * @description: 定时任务业务层实现
+ * @author : Naccl
+ * @since : 2020-11-01
  * // TODO 需要完善service
  */
 @Service
@@ -50,11 +47,31 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         }
     }
 
+    /**
+     * 获取所有的Job任务
+     * @return 返回所有JOB
+     */
     @Override
     public List<QuartzJob> getJobList() {
         return quartzMapper.selectList(null);
     }
 
+    /**
+     * 分页查询所有的job任务
+     * @param pageNum 第几页
+     * @param pageSize 一页几条数据
+     * @return
+     */
+    @Override
+    public IPage<QuartzJob> getJobList(Integer pageNum, Integer pageSize) {
+        IPage<QuartzJob> page = new Page<>(pageNum,pageSize);
+        return quartzMapper.selectPage(page,null);
+    }
+
+    /**
+     * 保存一个Job实例
+     * @param quartzJob JOB任务实例
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void saveJob(QuartzJob quartzJob) {
@@ -64,6 +81,10 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         ScheduleUtils.createScheduleJob(scheduler, quartzJob);
     }
 
+    /**
+     * 更新一个Job实例
+     * @param quartzJob 更新的JOB实例
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void updateJob(QuartzJob quartzJob) {
@@ -73,6 +94,10 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         ScheduleUtils.updateScheduleJob(scheduler, quartzJob);
     }
 
+    /**
+     * 删除一个Job实例
+     * @param jobId 任务ID
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void deleteJobById(Long jobId) {
@@ -82,14 +107,24 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         }
     }
 
+    /**
+     * 立即执行一个Job实例（暂时发现立即运行只会执行一次）
+     * @param jobId 任务ID
+     */
     @Override
     public void runJobById(Long jobId) {
         ScheduleUtils.run(scheduler, quartzMapper.selectById(jobId));
     }
 
+    /**
+     * 更新Job的运行状态
+     * @param jobId 更新的JobId
+     * @param status 状态
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void updateJobStatusById(QuartzJob quartzJob, Boolean status) {
+    public void updateJobStatusById(Long jobId, Boolean status) {
+        QuartzJob quartzJob = quartzMapper.selectById(jobId);
         if (quartzJob.getStatus().equals(status)){
             throw new PersistenceException("修改失败,Job状态冲突，不能给已经启动或停止的任务再修改同样的状态");
         }
@@ -105,6 +140,12 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         }
     }
 
+    /**
+     * 根据时间获取Job实例
+     * @param startDate 开始时间
+     * @param endDate 结束时间
+     * @return
+     */
     @Override
     public List<QuartzJob> getJobLogListByDate(String startDate, String endDate) {
         // 暂未用到未实现
@@ -112,6 +153,10 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         return null;
     }
 
+    /**
+     * 暂停运行
+     * @param jobId 任务ID
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void pause(Long jobId) {
@@ -121,6 +166,10 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         quartzMapper.updateById(quartzJob);
     }
 
+    /**
+     * 恢复运行
+     * @param jobId 任务ID
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void resume(Long jobId) {
@@ -130,6 +179,11 @@ public class ScheduleJobServiceImpl implements ScheduleJobService {
         quartzMapper.updateById(quartzJob);
     }
 
+    /**
+     * 根据Id获取一个Job实例
+     * @param jobId 任务ID
+     * @return
+     */
     @Override
     public QuartzJob selectJobById(Long jobId) {
         return quartzMapper.selectById(jobId);

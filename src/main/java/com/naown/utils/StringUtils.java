@@ -47,6 +47,15 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     }
 
     /**
+     *
+     * 获取系统版本信息  Windows 10
+     */
+    public static String getSystem(HttpServletRequest request) {
+        UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
+        return userAgent.getOperatingSystem().getName();
+    }
+
+    /**
      * 获取ip地址
      */
     public static String getIp(HttpServletRequest request) {
@@ -73,7 +82,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
                 log.error(e.getMessage(), e);
             }
         }
-        return ip;
+        // 如果ip是0:0:0:0:0:0:0:1的话就转换成127.0.0.1
+        return ip.equals("0:0:0:0:0:0:0:1") ? localhost : ip;
     }
 
     /**

@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 对应sys_role表
- * @USER: chenjian
+ * @author : chenjian
  * @DATE: 2021/2/20 22:17 周六
  **/
 @TableName(value = "sys_role")

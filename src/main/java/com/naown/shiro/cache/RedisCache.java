@@ -17,6 +17,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 暂未使用到
  * 自定义Shiro Redis缓存
  * @USER: chenjian
  * @DATE: 2021/2/21 23:14 周日

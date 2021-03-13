@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
 /**
- * @USER: chenjian
- * @DATE: 2021/2/11 21:33 周四
+ * @author : chenjian
+ * @since : 2021/2/11 21:33 周四
  **/
 public class RequestHolder {
 

@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 对应sys_user表
- * @USER: chenjian
+ * @author : chenjian
  * @DATE: 2021/2/20 21:55 周六
  **/
 @Data
@@ -70,6 +70,9 @@ public class User implements Serializable {
 
     /** 更新时间 */
     private Timestamp updateTime;
+
+    /** 最近一次登录时间 */
+    private Timestamp lastLoginDate;
 
     /** 角色权限集合 */
     @TableField(exist = false)

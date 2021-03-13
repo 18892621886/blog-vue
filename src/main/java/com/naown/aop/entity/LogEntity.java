@@ -3,16 +3,20 @@ package com.naown.aop.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 /**
  * 对应sys_log表
- * @USER: chenjian
- * @DATE: 2021/2/21 1:30 周日
+ * @author : chenjian
+ * @since : 2021/2/21 1:30 周日
  **/
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @TableName(value = "sys_log")
 public class LogEntity {
     /** logId */
@@ -33,6 +37,12 @@ public class LogEntity {
 
     /** 日志类型 */
     private String logType;
+
+    /** 操作系统 */
+    private String os;
+
+    /** 请求方式 例如：POST、GET、DELETE、PUT */
+    private String requestMethod;
 
     /** 请求ip */
     private String requestIp;

@@ -78,13 +78,12 @@ public class LogAspect {
 
     /**
      * 从token中解析用户名
-     * claim 是在生成jwt时的Key
+     * claim 是在生成jwt时的Key 当前存储的是username
      * @return
      */
     public String getUsername() {
         try {
             String token = (String)SecurityUtils.getSubject().getPrincipal();
-            log.info("token:{}",JwtUtils.getClaim(token,"username"));
             return JwtUtils.getClaim(token,"username");
         }catch (Exception e){
             return "";

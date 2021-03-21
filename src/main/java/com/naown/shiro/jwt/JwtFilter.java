@@ -29,6 +29,8 @@ import java.io.PrintWriter;
 @Slf4j
 public class JwtFilter extends BasicHttpAuthenticationFilter {
 
+    // TODO 一个很严重的问题，就是token过期前端没有任何响应，后续需要加入刷新机制和前端信息反馈
+
     /**
      * 检测Header里面是否包含Authorization字段，有就进行Token登录认证授权
      */

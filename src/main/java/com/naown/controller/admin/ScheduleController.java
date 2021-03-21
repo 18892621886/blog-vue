@@ -6,6 +6,7 @@ import com.naown.common.entity.Result;
 import com.naown.quartz.ScheduleJob;
 import com.naown.quartz.entity.QuartzJob;
 import com.naown.quartz.service.ScheduleJobService;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,6 +66,7 @@ public class ScheduleController {
      * @return
      */
     @Log("删除定时任务")
+    @RequiresRoles("超级管理员")
     @DeleteMapping("/job/delete")
     public Result deleteJob(@RequestParam Long jobId) {
         scheduleJobService.deleteJobById(jobId);

@@ -5,11 +5,14 @@ import com.naown.common.entity.LoginInfo;
 import com.naown.common.entity.Result;
 import com.naown.common.service.MenusService;
 import com.naown.shiro.entity.User;
+import com.naown.shiro.jwt.JwtToken;
 import com.naown.shiro.service.UserService;
 import com.naown.utils.JwtUtils;
 import com.naown.utils.ShiroUtils;
 import com.naown.utils.common.Constant;
 import com.sun.xml.internal.bind.v2.TODO;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +69,11 @@ public class LoginController {
             // JedisUtil.setObject(Constant.PREFIX_SHIRO_REFRESH_TOKEN + userDto.getAccount(), currentTimeMillis, Integer.parseInt(refreshTokenExpireTime));
             // 从Header中Authorization返回AccessToken，时间戳为当前时间戳
             String token = JwtUtils.sign(user.getUsername(), currentTimeMillis);
+
+            AuthenticationToken jwtToken = new JwtToken(token);
+            // 登录认证交由shiro管理 因为采用了jwt进行验证密码需要自行加密解密
+            SecurityUtils.getSubject().login(jwtToken);
+
             Map<String, Object> map = new HashMap<>(16);
             map.put("token", token);
             map.put("menu",menusService.listMenusByRoleId(user.getId()));

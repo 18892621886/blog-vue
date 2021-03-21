@@ -3,6 +3,7 @@ package com.naown.controller;
 import com.naown.common.entity.Result;
 import com.naown.shiro.entity.User;
 import com.naown.shiro.service.UserService;
+import com.naown.utils.EmailUtils;
 import com.naown.utils.JwtUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -74,5 +75,15 @@ public class WebController {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public Result unauthorized() {
         return Result.succeed(401, "Unauthorized");
+    }
+
+    @RequestMapping("email")
+    public Result email() {
+        try {
+            EmailUtils.sendEmail();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Result.succeed("发送邮件");
     }
 }

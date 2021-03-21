@@ -63,7 +63,7 @@ logging:
   level:
     com.naown.aop.mapper: debug
 server:
-  port: 8082
+  port: 8088
 #自定义线程
 task:
   pool:
@@ -75,3 +75,13 @@ task:
     keep-alive-seconds: 60
     # 队列容量
     queue-capacity: 50
+naown:
+  email:
+    # 邮件服务器地址
+    smtp-host: smtp.163.com
+    # 发件人的用户名
+    send-user-name: 18892621886@163.com
+    # 发件人密码
+    send-user-password: LHBRHGIPNUYOYYLL
+    # 收件人邮箱
+    addressee: 739535718@qq.com

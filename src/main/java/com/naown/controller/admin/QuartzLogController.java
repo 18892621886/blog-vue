@@ -7,6 +7,7 @@ import com.naown.common.entity.Result;
 import com.naown.quartz.ScheduleJob;
 import com.naown.quartz.entity.QuartzLog;
 import com.naown.quartz.service.QuartzLogService;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,6 +50,7 @@ public class QuartzLogController {
      * @param id 日志id
      * @return
      */
+    @RequiresRoles("超级管理员")
     @RequestMapping(value = "/deleteQuartzLog",method = RequestMethod.DELETE)
     public Result delete(@RequestParam Long id) {
         Integer integer = quartzLogService.deleteQuartzLogById(id);

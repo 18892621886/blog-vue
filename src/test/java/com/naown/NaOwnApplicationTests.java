@@ -5,6 +5,7 @@ import com.naown.common.entity.Menus;
 import com.naown.common.mapper.MenusMapper;
 import com.naown.shiro.entity.User;
 import com.naown.shiro.mapper.UserMapper;
+import com.naown.utils.EmailUtils;
 import com.naown.utils.JwtUtils;
 import com.naown.utils.SpringContextUtils;
 import org.junit.jupiter.api.Test;
@@ -47,6 +48,11 @@ class NaOwnApplicationTests {
         String admin = JwtUtils.getClaim(token, "username");
         System.out.println(admin);
         System.out.println(JwtUtils.verify(token));
+    }
+
+    @Test
+    public void email() throws Exception {
+        EmailUtils.sendEmail();
     }
 
 }

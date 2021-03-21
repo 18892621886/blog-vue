@@ -20,9 +20,9 @@ import java.util.Date;
 public class JwtUtils {
 
     /**
-     * 过期时间30分钟
+     * 过期时间60分钟
      */
-    private static final long EXPIRE_TIME = 30*60*1000;
+    private static final long EXPIRE_TIME = 60*60*1000;
 
     /**
      * JWT认证加密私钥(Base64加密)

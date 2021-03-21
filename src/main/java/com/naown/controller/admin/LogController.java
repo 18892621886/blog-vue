@@ -5,6 +5,7 @@ import com.naown.aop.entity.LogEntity;
 import com.naown.aop.service.LogService;
 import com.naown.common.entity.Result;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -70,6 +71,7 @@ public class LogController {
      * @param id 日志id
      * @return
      */
+    @RequiresRoles("超级管理员")
     @RequestMapping(value = "/deleteLog",method = RequestMethod.DELETE)
     public Result delete(@RequestParam Long id) {
         Integer integer = logService.deleteLogById(id);

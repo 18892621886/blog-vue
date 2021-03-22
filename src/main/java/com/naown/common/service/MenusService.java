@@ -9,11 +9,6 @@ import java.util.List;
  * @since: 2021/3/2 18:02 周二
  **/
 public interface MenusService {
-    /**
-     * 获取所有的目录列表
-     * @return
-     */
-    Menus[] listMenus();
 
     /**
      * 根据角色ID获取菜单列表

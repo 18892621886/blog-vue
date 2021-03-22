@@ -16,7 +16,7 @@ public class Result extends HashMap<String,Object> {
 
     /**
      * 成功
-     * @param data
+     * @param data 需要返回的数据
      * @return
      */
     public static Result succeed(Object data) {
@@ -26,7 +26,7 @@ public class Result extends HashMap<String,Object> {
     }
     /**
      * 成功
-     * @param msg
+     * @param msg 需要返回的消息
      * @return
      */
     public static Result succeed(String msg) {
@@ -37,7 +37,8 @@ public class Result extends HashMap<String,Object> {
 
     /**
      * 成功
-     * @param data
+     * @param data 需要返回的数据
+     * @param msg 需要返回的消息
      * @return
      */
     public static Result succeed(Object data,String msg) {
@@ -47,6 +48,12 @@ public class Result extends HashMap<String,Object> {
         return result;
     }
 
+    /**
+     * 失败
+     * @param code 返回的code码
+     * @param msg 错误消息
+     * @return
+     */
     public static Result error(Integer code, String msg) {
         Result result = new Result();
         result.put("code", code);
@@ -56,7 +63,7 @@ public class Result extends HashMap<String,Object> {
 
     /**
      * 自定义异常
-     * @param msg
+     * @param msg 错误消息
      * @return
      */
     public static Result error(String msg) {

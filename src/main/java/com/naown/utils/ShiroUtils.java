@@ -21,7 +21,7 @@ public class ShiroUtils {
     }
 
     /**
-     * 获取系统用户名称
+     * 获取系统用户名称 目前使用JwtToken认证这种方式只能获取到token,暂时废弃
      *
      * @return 系统用户名称
      */

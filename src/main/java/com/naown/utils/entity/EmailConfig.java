@@ -5,6 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * 邮箱配置类，从yml文件中获取数据
  * @author: chenjian
  * @since: 2021/3/14 14:15 周日
  **/

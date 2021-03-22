@@ -1,10 +1,13 @@
 package com.naown.controller;
 
 import com.naown.common.entity.Result;
+import com.naown.common.service.BacklogService;
 import com.naown.shiro.entity.User;
 import com.naown.shiro.service.UserService;
 import com.naown.utils.EmailUtils;
 import com.naown.utils.JwtUtils;
+import com.naown.utils.SpringContextUtils;
+import com.naown.utils.entity.EmailConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
@@ -17,6 +20,8 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.http.HttpServletResponse;
 

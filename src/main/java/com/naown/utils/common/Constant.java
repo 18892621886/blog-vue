@@ -1,7 +1,7 @@
 package com.naown.utils.common;
 
 /**
- * 常量
+ * 常量 暂未用到
  * @author dolyw.com
  * @date 2018/9/3 16:03
  */
@@ -47,7 +47,7 @@ public class Constant {
     /**
      * JWT-account:
      */
-    public static final String ACCOUNT = "account";
+    public static final String ACCOUNT = "username";
 
     /**
      * JWT-currentTimeMillis:

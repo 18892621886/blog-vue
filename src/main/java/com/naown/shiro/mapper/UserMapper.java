@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * UserMapper接口 用于数据交互
- * @USER: chenjian
+ * @author : chenjian
  * @DATE: 2021/2/20 22:05 周六
  **/
 public interface UserMapper extends BaseMapper<User> {

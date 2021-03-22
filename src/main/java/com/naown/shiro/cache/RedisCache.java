@@ -1,6 +1,8 @@
 package com.naown.shiro.cache;
 
+import com.naown.utils.JwtUtils;
 import com.naown.utils.SpringContextUtils;
+import com.naown.utils.common.Constant;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.shiro.cache.Cache;
@@ -19,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 暂未使用到
  * 自定义Shiro Redis缓存
- * @USER: chenjian
+ * @author : chenjian
  * @DATE: 2021/2/21 23:14 周日
  **/
 public class RedisCache<K,V> implements Cache<K,V> {
@@ -35,12 +37,27 @@ public class RedisCache<K,V> implements Cache<K,V> {
     public RedisCache() {
     }
 
+    /**
+     * 获取自定义的key 全称为shiro:cache:username
+     * @param key
+     * @return
+     */
+    private String getKey(Object key){
+        return Constant.PREFIX_SHIRO_CACHE + JwtUtils.getClaim(key.toString(),Constant.ACCOUNT);
+    }
+
+    /**
+     * 获取redis中的shiro缓存 报黄是因为没有指定泛型
+     * @param key
+     * @return
+     * @throws CacheException
+     */
     @Override
-    public V get(K k) throws CacheException {
-        /**
-         * 获取当前缓存的名字的K
-         */
-        return (V) this.getRedisTemplate().opsForHash().get(this.cacheName,k.toString());
+    public Object get(Object key) throws CacheException {
+        if (Boolean.FALSE.equals(this.getRedisTemplate().hasKey(getKey(key)))){
+            return null;
+        }
+        return this.getRedisTemplate().opsForValue().get(this.getKey(key));
     }
 
     @Override
@@ -79,9 +96,6 @@ public class RedisCache<K,V> implements Cache<K,V> {
     }
 
     private RedisTemplate getRedisTemplate(){
-        RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-        return redisTemplate;
+        return (RedisTemplate)SpringContextUtils.getBean("redisTemplate");
     }
 }

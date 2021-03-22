@@ -31,7 +31,7 @@ public class Menus {
     private String name;
     /** 菜单栏可访问的全路径 比如/home/Vue.vue */
     private String url;
-    /** 菜单子菜单ID */
+    /** 菜单子菜单ID 其实应该是parentId */
     private Long childrenId;
     /** 是否包含二级菜单 */
     @TableField(exist = false)

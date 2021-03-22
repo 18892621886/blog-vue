@@ -8,10 +8,13 @@ import com.naown.shiro.mapper.UserMapper;
 import com.naown.utils.EmailUtils;
 import com.naown.utils.JwtUtils;
 import com.naown.utils.SpringContextUtils;
+import com.naown.utils.entity.EmailConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.io.File;
 import java.util.List;
@@ -52,7 +55,7 @@ class NaOwnApplicationTests {
 
     @Test
     public void email() throws Exception {
-        EmailUtils.sendEmail();
+
     }
 
 }

@@ -21,15 +21,6 @@ public class MenusServiceImpl implements MenusService {
     private MenusMapper menusMapper;
 
     /**
-     * 获取所有的目录列表
-     * @return
-     */
-    @Override
-    public Menus[] listMenus() {
-        return menusMapper.listMenus();
-    }
-
-    /**
      * 根据角色ID获取菜单列表
      * 并且在返回的菜单中筛选出有二级菜单的进行赋值
      * @param roleId

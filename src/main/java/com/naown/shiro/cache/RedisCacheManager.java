@@ -5,8 +5,9 @@ import org.apache.shiro.cache.CacheException;
 import org.apache.shiro.cache.CacheManager;
 
 /**
+ * Shiro缓存管理器
  * 暂未使用到
- * @USER: chenjian
+ * @author : chenjian
  * @DATE: 2021/2/21 23:14 周日
  **/
 public class RedisCacheManager implements CacheManager {

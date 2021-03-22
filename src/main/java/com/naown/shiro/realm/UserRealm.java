@@ -32,7 +32,7 @@ public class UserRealm extends AuthorizingRealm {
     private UserService userService;
 
     /**
-     * 必须重新此方法，否则会报错
+     * 必须重写此方法，否则会报错
      * @param token
      * @return
      */
@@ -114,7 +114,7 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     /**
-     * 重写父类的默认加密算法，改为MD5加密
+     * 重写父类的默认加密算法，改为MD5加密 目前为JwtToken认证所以加密暂时不需要，如果需要实现MD5加密可以在登录时进行一些逻辑操作
      * 设置散列次数为16次，如果需要安全可设置1024次或者2048
      * @param credentialsMatcher
      */

@@ -13,6 +13,6 @@ import org.apache.shiro.cache.CacheManager;
 public class RedisCacheManager implements CacheManager {
     @Override
     public <K, V> Cache<K, V> getCache(String cacheName) throws CacheException {
-        return new RedisCache<>(cacheName);
+        return new RedisCache<>();
     }
 }

@@ -1,6 +1,7 @@
 package com.naown.shiro.cache;
 
 import com.naown.utils.JwtUtils;
+import com.naown.utils.RedisUtils;
 import com.naown.utils.SpringContextUtils;
 import com.naown.utils.common.Constant;
 import lombok.Data;
@@ -28,12 +29,6 @@ public class RedisCache<K,V> implements Cache<K,V> {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    private String cacheName;
-
-    public RedisCache(String cacheName){
-        this.cacheName = cacheName;
-    }
-
     public RedisCache() {
     }
 
@@ -47,52 +42,52 @@ public class RedisCache<K,V> implements Cache<K,V> {
     }
 
     /**
-     * 获取redis中的shiro缓存 报黄是因为没有指定泛型
+     * 获取redis中的shiro缓存 报黄是因为没有指定泛型 hash的key为shiro:hash 内部key为shiro:cache:username
      * @param key
      * @return
      * @throws CacheException
      */
     @Override
     public Object get(Object key) throws CacheException {
-        if (Boolean.FALSE.equals(this.getRedisTemplate().hasKey(getKey(key)))){
+        if (Boolean.FALSE.equals(this.getRedisTemplate().hasKey(this.getKey(key)))){
             return null;
         }
-        return this.getRedisTemplate().opsForValue().get(this.getKey(key));
+        return this.getRedisTemplate().opsForHash().get(Constant.PREFIX_SHIRO_HASH_CACHE,this.getKey(key));
     }
 
     @Override
-    public V put(K k, V v) throws CacheException {
+    public Object put(Object key, Object value) throws CacheException {
         /**
          * 缓存cacheName 当做K 并且5小时后过期
          */
-        this.getRedisTemplate().opsForHash().put(this.cacheName,k.toString(),v);
-        this.getRedisTemplate().expire(this.cacheName,5, TimeUnit.HOURS);
+        this.getRedisTemplate().opsForHash().put(Constant.PREFIX_SHIRO_HASH_CACHE,this.getKey(key),value);
+        this.getRedisTemplate().expire(Constant.PREFIX_SHIRO_HASH_CACHE,5,TimeUnit.HOURS);
         return null;
     }
 
     @Override
-    public V remove(K k) throws CacheException {
-        return (V)getRedisTemplate().opsForHash().delete(this.cacheName,k.toString());
+    public V remove(Object key) throws CacheException {
+        return (V)getRedisTemplate().opsForHash().delete(Constant.PREFIX_SHIRO_HASH_CACHE,this.getKey(key));
     }
 
     @Override
     public void clear() throws CacheException {
-        getRedisTemplate().delete(this.cacheName);
+        getRedisTemplate().delete(Constant.PREFIX_SHIRO_HASH_CACHE);
     }
 
     @Override
     public int size() {
-        return getRedisTemplate().opsForHash().size(this.cacheName).intValue();
+        return getRedisTemplate().opsForHash().size(Constant.PREFIX_SHIRO_HASH_CACHE).intValue();
     }
 
     @Override
     public Set<K> keys() {
-        return this.getRedisTemplate().keys(this.cacheName);
+        return this.getRedisTemplate().keys(Constant.PREFIX_SHIRO_HASH_CACHE);
     }
 
     @Override
     public Collection<V> values() {
-        return this.getRedisTemplate().opsForHash().values(this.cacheName);
+        return this.getRedisTemplate().opsForHash().values(Constant.PREFIX_SHIRO_HASH_CACHE);
     }
 
     private RedisTemplate getRedisTemplate(){

@@ -6,6 +6,7 @@ import com.naown.shiro.entity.User;
 import com.naown.shiro.service.UserService;
 import com.naown.utils.EmailUtils;
 import com.naown.utils.JwtUtils;
+import com.naown.utils.RedisUtils;
 import com.naown.utils.SpringContextUtils;
 import com.naown.utils.entity.EmailConfig;
 import org.apache.logging.log4j.LogManager;
@@ -51,6 +52,8 @@ public class WebController {
     @GetMapping("/article")
     public Result article() {
         Subject subject = SecurityUtils.getSubject();
+        boolean user = RedisUtils.hasKey("user");
+        System.out.println(user);
         if (subject.isAuthenticated()) {
             return Result.succeed("You are already logged in");
         } else {

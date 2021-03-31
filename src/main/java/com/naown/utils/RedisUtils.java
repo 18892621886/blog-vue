@@ -16,13 +16,13 @@ import java.util.concurrent.TimeUnit;
  * @author: chenjian
  * @since: 2021/3/22 13:28 周一
  **/
+@Component
 public class RedisUtils {
 
     private static RedisTemplate<String, Object> redisTemplate;
 
-    // TODO 暂时采用静态方法块初始化redisTemplate
-    static {
-        RedisUtils.redisTemplate = (RedisTemplate)SpringContextUtils.getBean("redisTemplate");
+    private RedisUtils(@Autowired RedisTemplate<String, Object> redisTemplate){
+        RedisUtils.redisTemplate = redisTemplate;
     }
     /**
      * 指定缓存失效时间
@@ -179,7 +179,7 @@ public class RedisUtils {
      * @param item 项 不能为null
      * @return 值
      */
-    public Object hget(String key, String item) {
+    public static Object hget(String key, String item) {
         return redisTemplate.opsForHash().get(key, item);
     }
 

@@ -48,7 +48,6 @@ public class LogAspect {
         currentTime.remove();
         // 获得HttpServletRequest
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
-        System.out.println("method"+request.getMethod());
         // 使用mybatis-plus进行存储
         logService.saveLog(getUsername(),StringUtils.getSystem(request), StringUtils.getBrowser(request),request.getMethod(),StringUtils.getIp(request),joinPoint,log);
         return proceed;

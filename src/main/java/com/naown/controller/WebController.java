@@ -8,6 +8,7 @@ import com.naown.utils.EmailUtils;
 import com.naown.utils.JwtUtils;
 import com.naown.utils.RedisUtils;
 import com.naown.utils.SpringContextUtils;
+import com.naown.utils.common.Constant;
 import com.naown.utils.entity.EmailConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -52,8 +53,8 @@ public class WebController {
     @GetMapping("/article")
     public Result article() {
         Subject subject = SecurityUtils.getSubject();
-        boolean user = RedisUtils.hasKey("user");
-        System.out.println(user);
+        boolean user = RedisUtils.hasKey("shiro:hash");
+        System.out.println(RedisUtils.hget(Constant.PREFIX_SHIRO_HASH_CACHE,Constant.PREFIX_SHIRO_CACHE+"admin").toString());
         if (subject.isAuthenticated()) {
             return Result.succeed("You are already logged in");
         } else {
@@ -93,5 +94,11 @@ public class WebController {
             e.printStackTrace();
         }
         return Result.succeed("发送邮件");
+    }
+
+    @RequestMapping("redis")
+    public Result getRedis(){
+        Long aLong = RedisUtils.getExpire("shiro:cache:admin");
+        return Result.succeed(aLong);
     }
 }

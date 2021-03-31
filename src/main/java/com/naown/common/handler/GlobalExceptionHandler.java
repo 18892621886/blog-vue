@@ -1,7 +1,9 @@
 package com.naown.common.handler;
 
+import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.naown.common.entity.Result;
 import org.apache.shiro.ShiroException;
+import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.slf4j.Logger;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @author : chenjian
  * @since : 2021/2/21 17:17 周日
  **/
-//@RestControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionHandler {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -33,12 +35,18 @@ public class GlobalExceptionHandler {
         return Result.error(exception.getMessage());
     }
 
+    @ExceptionHandler(value = AuthenticationException.class)
+    public Result tokenExpiredHandle(AuthenticationException tokenExpiredException){
+        log.error("token异常:{}",tokenExpiredException.getMessage());
+        return Result.error(tokenExpiredException.getMessage());
+    }
+
     /**
      * TODO 还需要继续优化
      * @param
      * @return
      */
-    @ExceptionHandler(value = ShiroException.class)
+    //@ExceptionHandler(value = ShiroException.class)
     public Result handleException(ShiroException e) {
         if (e instanceof UnknownAccountException){
             return Result.error(HttpStatus.UNAUTHORIZED.value(),"用户名或密码错误！");

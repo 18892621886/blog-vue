@@ -20,6 +20,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * TODO 目前的一些问题，使用redis缓存之后暂时未用到一些有用的功能，后续得进行更新和优化
  * 暂未使用到
  * 自定义Shiro Redis缓存
  * @author : chenjian
@@ -42,6 +43,7 @@ public class RedisCache<K,V> implements Cache<K,V> {
     }
 
     /**
+     * TODO 需要解决vue和axios的OPTIONS请求 否则每次复杂请求会进行两次查询
      * 获取redis中的shiro缓存 报黄是因为没有指定泛型 hash的key为shiro:hash 内部key为shiro:cache:username
      * @param key
      * @return
@@ -52,16 +54,15 @@ public class RedisCache<K,V> implements Cache<K,V> {
         if (Boolean.FALSE.equals(this.getRedisTemplate().hasKey(this.getKey(key)))){
             return null;
         }
-        return this.getRedisTemplate().opsForHash().get(Constant.PREFIX_SHIRO_HASH_CACHE,this.getKey(key));
+        return this.getRedisTemplate().opsForValue().get(this.getKey(key));
     }
 
     @Override
     public Object put(Object key, Object value) throws CacheException {
         /**
-         * 缓存cacheName 当做K 并且5小时后过期
+         * 缓存cacheName 当做K 并且1小时后过期
          */
-        this.getRedisTemplate().opsForHash().put(Constant.PREFIX_SHIRO_HASH_CACHE,this.getKey(key),value);
-        this.getRedisTemplate().expire(Constant.PREFIX_SHIRO_HASH_CACHE,5,TimeUnit.HOURS);
+        this.getRedisTemplate().opsForValue().set(this.getKey(key),value,1,TimeUnit.HOURS);
         return null;
     }
 

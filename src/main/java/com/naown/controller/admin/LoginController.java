@@ -8,6 +8,7 @@ import com.naown.shiro.entity.User;
 import com.naown.shiro.jwt.JwtToken;
 import com.naown.shiro.service.UserService;
 import com.naown.utils.JwtUtils;
+import com.naown.utils.RedisUtils;
 import com.naown.utils.ShiroUtils;
 import com.naown.utils.common.Constant;
 import com.sun.xml.internal.bind.v2.TODO;
@@ -36,6 +37,8 @@ import java.util.UUID;
 @RequestMapping("/admin")
 public class LoginController {
 
+    /** redis中jwt的过期时间先设个初始值，后续有需要可以在配置文件中获取 */
+    private String refreshTokenExpireTime = "1800";
 
     @Autowired
     private MenusService menusService;
@@ -45,6 +48,7 @@ public class LoginController {
 
     /**
      * 2020.3.2
+     * TODO 使用了qs模块目的是为了减少OPTIONS类型的请求减少服务器的压力 目前的问题发现使用qs模块之后使用@RequestBody 注解会获取不到
      * 首页登录逻辑编写
      * @param loginInfo
      * @return
@@ -58,15 +62,21 @@ public class LoginController {
             throw new RuntimeException("该帐号不存在(The account does not exist.)");
         }
         // 密码解密，暂时没做
-
+        // TODO 这里调用redis存储用户信息和用户过期时间以便刷新的时候调用查询
+        /**
+         * 登出也需要做同样的逻辑删除redis里的数据  至此redis刷新token机制完善成功
+         * long currentTimeMillis = System.currentTimeMillis();
+         * String token= JWTUtil.createToken(user.getUsername(),currentTimeMillis);
+         * redisUtil.set(username,currentTimeMillis,60*30);
+         */
         if (user.getPassword().equals(loginInfo.getPassword())) {
             // 清除可能存在的Shiro权限信息缓存
-            /*if (JedisUtil.exists(Constant.PREFIX_SHIRO_CACHE + userDto.getAccount())) {
-                JedisUtil.delKey(Constant.PREFIX_SHIRO_CACHE + userDto.getAccount());
-            }*/
+            if (RedisUtils.hasKey(Constant.PREFIX_SHIRO_CACHE + user.getUsername())) {
+                RedisUtils.del(Constant.PREFIX_SHIRO_CACHE + user.getUsername());
+            }
             // 设置RefreshToken，时间戳为当前时间戳，直接设置即可(不用先删后设，会覆盖已有的RefreshToken)
             String currentTimeMillis = String.valueOf(System.currentTimeMillis());
-            // JedisUtil.setObject(Constant.PREFIX_SHIRO_REFRESH_TOKEN + userDto.getAccount(), currentTimeMillis, Integer.parseInt(refreshTokenExpireTime));
+            RedisUtils.set(Constant.PREFIX_SHIRO_REFRESH_TOKEN + user.getUsername(), currentTimeMillis, Integer.parseInt(refreshTokenExpireTime));
             // 从Header中Authorization返回AccessToken，时间戳为当前时间戳
             String token = JwtUtils.sign(user.getUsername(), currentTimeMillis);
 

@@ -1,5 +1,6 @@
 package com.naown.shiro.config;
 
+import com.naown.shiro.cache.RedisCacheManager;
 import com.naown.shiro.jwt.JwtFilter;
 import com.naown.shiro.realm.UserRealm;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
@@ -105,7 +106,7 @@ public class ShiroConfig {
         subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
         defaultWebSecurityManager.setSubjectDAO(subjectDAO);
         // TODO 设置自定义Cache缓存 暂时去除 后续加入redis缓存
-        // defaultWebSecurityManager.setCacheManager(new CustomCacheManager());
+        defaultWebSecurityManager.setCacheManager(new RedisCacheManager());
         return defaultWebSecurityManager;
     }
 

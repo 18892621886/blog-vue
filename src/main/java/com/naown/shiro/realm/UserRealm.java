@@ -3,6 +3,7 @@ package com.naown.shiro.realm;
 import com.naown.shiro.jwt.JwtToken;
 import com.naown.shiro.entity.User;
 import com.naown.utils.JwtUtils;
+import com.naown.utils.RedisUtils;
 import com.naown.utils.SaltUtils;
 import com.naown.shiro.service.UserService;
 import com.naown.utils.ShiroUtils;
@@ -18,6 +19,9 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 
 /**
@@ -62,6 +66,7 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     /**
+     * TODO 重新刷新token的机制在这方法里面编写，filter里的只是出现异常的突发状况的处理
      * 认证
      * @param authenticationToken
      * @return
@@ -77,31 +82,21 @@ public class UserRealm extends AuthorizingRealm {
             throw new AuthenticationException("Token中帐号为空(The account in Token is empty.)");
         }
         // 查询用户是否存在
-        //UserDto userDto = new UserDto();
-        // TODO userDto.setAccount(account); 此处后续使用缓存实现，因为每一次都需要从数据库中查询
+        // TODO 此处后续使用缓存实现，因为每一次都需要从数据库中查询
         User user = userService.findByUserNameRole(account);
         if (user == null) {
             throw new AuthenticationException("该帐号不存在(The account does not exist.)");
         }
         // 开始认证，要AccessToken认证通过，且Redis中存在RefreshToken，且两个Token时间戳一致
-        // 暂时去除redis缓存&& JedisUtil.exists(Constant.PREFIX_SHIRO_REFRESH_TOKEN + account)
-        if (JwtUtils.verify(token)) {
+        if (JwtUtils.verify(token) && RedisUtils.hasKey(Constant.PREFIX_SHIRO_REFRESH_TOKEN + account)) {
             // 获取RefreshToken的时间戳
-            /*String currentTimeMillisRedis = JedisUtil.getObject(Constant.PREFIX_SHIRO_REFRESH_TOKEN + account).toString();*/
+            String currentTimeMillisRedis = RedisUtils.get(Constant.PREFIX_SHIRO_REFRESH_TOKEN + account).toString();
             // 获取AccessToken时间戳，与RefreshToken的时间戳对比
-            /*if (JwtUtil.getClaim(token, Constant.CURRENT_TIME_MILLIS).equals(currentTimeMillisRedis)) {
-                return new SimpleAuthenticationInfo(token, token, "userRealm");
-            }*/
-
-            // 这是暂时只做token校验 暂无其他逻辑
-            return new SimpleAuthenticationInfo(token, token, this.getName());
+            if (JwtUtils.getClaim(token, Constant.CURRENT_TIME_MILLIS).equals(currentTimeMillisRedis)) {
+                return new SimpleAuthenticationInfo(token, token, this.getName());
+            }
         }
         throw new AuthenticationException("Token已过期(Token expired or incorrect.)");
-        /*UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
-        User user = userService.findByUserNameRole(token.getUsername());
-        if(user == null) {
-            throw new UnknownAccountException("账号或密码不正确");
-        }*/
         /**
          * TODO 后续如果需要可以添加该功能
          *  账号锁定
